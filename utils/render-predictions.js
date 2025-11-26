@@ -17,6 +17,12 @@ export const renderPredictions = (predictions, context) => {
         //fill the color
         context.fillStyle = `rgba(255, 0, 0,${isPerson ? 0.5 : 0.2} )`
         context.fillRect(x, y, width, height)
+        
+        //draw the label background
+        context.fillStyle = isPerson ? "red" : "blue"
+        const textWidth = context.measureText(prediction.class).width
+        const textHeight = parseInt(font, 10) // base 10
+        context.fillRect(x, y, textWidth + 4, textHeight + 4)
 
     })
 }         
