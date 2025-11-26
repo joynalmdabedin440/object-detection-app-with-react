@@ -27,7 +27,10 @@ export const ObjectDetection = () => {
 
       const detectedObjects = await net.detect(webcamRef.current.video, undefined, 0.7)
       
-      console.log(detectedObjects);
+      // console.log(detectedObjects);
+      const context = canvasRef.current.getContext('2d')
+
+      renderPredictions(detectedObjects, context)
       
     }
   }
