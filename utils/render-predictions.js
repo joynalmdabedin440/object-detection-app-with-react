@@ -14,7 +14,9 @@ export const renderPredictions = (predictions, context) => {
         context.strokeStyle = isPerson ? "red" : "blue"
         context.lineWidth = 4
         context.strokeRect(x, y, width, height)
-        
+        //fill the color
+        context.fillStyle = `rgba(255, 0, 0,${isPerson ? 0.5 : 0.2} )`
+        context.fillRect(x, y, width, height)
 
     })
 }         
